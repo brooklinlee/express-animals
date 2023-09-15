@@ -68,7 +68,7 @@ function deleteAnimal(req, res) {
 function update(req, res) {
   Animal.findByIdAndUpdate(req.params.animalId, req.body, {new:true})
   .then(animal => {
-    res.redirect(`/animals/${animal._id}`)
+    res.redirect(`/animals`)
   })
   .catch(error => {
     console.log(error)

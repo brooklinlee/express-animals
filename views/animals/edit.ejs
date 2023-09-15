@@ -7,5 +7,11 @@
 </head>
 <body>
   <h1>Edit <%= animal.species %></h1>
+  <form action="/animals/<%= animal._id %>?_method=PUT" method="POST" autocomplete="off">
+    <input placeholder="edit species" type="text" name="species">
+    <input placeholder="edit habitat" type="text" name="habitat">
+    <input placeholder="update why you like them" type="text" name="why">
+    <button type="submit">Save Animal</button>
+  </form>
 </body>
 </html>
