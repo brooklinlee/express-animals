@@ -5,5 +5,8 @@ const router = Router()
 
 // GET localhost:3000/users
 router.get('/', animalsCtrl.index)
+router.get('/new', animalsCtrl.new)
+router.post('/', animalsCtrl.create)
 
-export { router }
+
+export { router } 

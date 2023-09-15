@@ -6,16 +6,14 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Index</h1>
-  <%= animals.forEach(element => { %>
-    <div>
-      <h3><%= animal.species %></h3>
-      <p>Habitat: <%= animal.habitat %></p>
-      <p>Huggable? <%= animal.huggable ? 'huggable' : 'hugging not advised' %></p>
-    </div>
-    <%=}); %>
-  <a href="/animals/<%= animal._id %>"><%= animal.species %></a>
-  <a href="/animals/<%= animal._id %>"><%= animal.habitat %></a>
-  <a href="/animals/<%= animal._id %>"><%= animal.huggable ? 'huggable' : 'hugging not advised' %></a>
+  <h1>The Best Animals</h1>
+  <ul>
+  <% animals.forEach(animal => { %>
+    <li>
+      Animal: <%= animal.species %> | Habitat: <%= animal.habitat %> | Huggable: <%= animal.huggable %>
+    </li>
+  <% }) %>
+  </ul>
+  <h4>Add a <a href="/animals/new">new animal</a>?</h4>
 </body>
 </html>
