@@ -54,6 +54,43 @@ function edit(req, res) {
   })
 }
 
+function editSpecies(req, res) {
+  Animal.findById(req.params.animalId)
+  .then(animal => {
+    res.render('animals/edit/species', {
+      animal: animal
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+function editHabitat(req, res) {
+  Animal.findById(req.params.animalId)
+  .then(animal => {
+    res.render('animals/edit/habitat', {
+      animal: animal
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+function editWhy(req, res) {
+  Animal.findById(req.params.animalId)
+  .then(animal => {
+    res.render('animals/edit/why', {
+      animal: animal
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
 function deleteAnimal(req, res) {
   Animal.findByIdAndDelete(req.params.animalId)
   .then(animal => {
@@ -84,4 +121,7 @@ export {
   update,
   show,
   edit,
+  editSpecies,
+  editHabitat,
+  editWhy,
 }

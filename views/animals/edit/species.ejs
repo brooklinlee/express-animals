@@ -7,9 +7,9 @@
 </head>
 <body>
   <h1>Edit <%= animal.species %></h1>
-  <a href="/animals/<%= animal._id %>/edit/species">Edit Species</a>
-| <a href="/animals/<%= animal._id %>/edit/habitat">Edit Habitat</a>
-| <a href="/animals/<%= animal._id %>/edit/why">Edit Why You Think They're Cool</a>
+  <form action="/animals/<%= animal._id %>?_method=PUT" method="POST" autocomplete="off">
+    <input placeholder="edit species" type="text" name="species">
+    <button type="submit">Save Animal</button>
   </form>
 </body>
 </html>
