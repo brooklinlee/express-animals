@@ -10,16 +10,17 @@
   <ul>
   <% animals.forEach(animal => { %>
     <li>
-      <form 
-      action="/animals/<%= animal._id %>?_method=DELETE" 
-      method="POST">
-      <button type="submit">❌</button>
-    </form>
+      
     Species: <%= animal.species %> 
     | Habitat: <%= animal.habitat %> 
-    | Cool Because... <%= animal.why %> 
-    | <a href="/animals/<%= animal._id %>">Edit Animal</a> 
+    | Cool Because... <%= animal.why %>  
     </li>
+    <form action="/animals/<%= animal._id %>" method="get" ><button type="submit">Edit Animal</button></form>
+    <form 
+      action="/animals/<%= animal._id %>?_method=DELETE" 
+      method="POST">
+      <button type="submit">X</button>
+    </form>
   <% }) %>
   </ul>
   <h4>Add a <a href="/animals/new">new animal</a>?</h4>
