@@ -28,6 +28,32 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Animal.findById(req.params.animalId)
+  .then(animal => {
+    res.render('animals/edit', {
+      animal: animal
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+function edit(req, res) {
+  Animal.findById(req.params.animalId)
+  .then(animal => {
+    res.render('animals/edit', {
+      animal: animal
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
 function deleteAnimal(req, res) {
   Animal.findByIdAndDelete(req.params.animalId)
   .then(animal => {
@@ -56,4 +82,6 @@ export {
   create,
   deleteAnimal as delete,
   update,
+  show,
+  edit,
 }

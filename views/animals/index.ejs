@@ -15,7 +15,7 @@
       method="POST">
       <button type="submit">❌</button>
     </form>
-    <%= animal.species %> | Habitat: <%= animal.habitat %> | Cool Because... <%= animal.why %> 
+    <a href="/animals/<%= animal._id %>"><%= animal.species %></a> | Habitat: <%= animal.habitat %> | Cool Because... <%= animal.why %> 
     </li>
   <% }) %>
   </ul>
