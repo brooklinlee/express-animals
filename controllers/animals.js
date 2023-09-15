@@ -18,11 +18,31 @@ function newAnimal(req, res) {
 }
 
 function create(req, res) {
-  req.body.huggable = true
-  req.body.habitat = "habitat"
   Animal.create(req.body)
   .then(animal => {
     res.redirect('/animals')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+function deleteAnimal(req, res) {
+  Animal.findByIdAndDelete(req.params.animalId)
+  .then(animal => {
+    res.redirect('/animals')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+function update(req, res) {
+  Animal.findByIdAndUpdate(req.params.animalId, req.body, {new:true})
+  .then(animal => {
+    res.redirect(`/animals/${animal._id}`)
   })
   .catch(error => {
     console.log(error)
@@ -34,4 +54,6 @@ export {
   index,
   newAnimal as new,
   create,
+  deleteAnimal as delete,
+  update,
 }

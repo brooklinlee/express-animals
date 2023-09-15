@@ -7,6 +7,8 @@ const router = Router()
 router.get('/', animalsCtrl.index)
 router.get('/new', animalsCtrl.new)
 router.post('/', animalsCtrl.create)
+router.delete('/:animalId', animalsCtrl.delete)
+router.put('/:animalId', animalsCtrl.update)
 
 
 export { router } 
