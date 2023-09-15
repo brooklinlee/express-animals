@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const animalSchema = new Schema ({
   species: String,
   habitat: String,
-  huggable: String
+  huggable: Boolean
 })
 
 const Animal = mongoose.model('Animal', animalSchema)

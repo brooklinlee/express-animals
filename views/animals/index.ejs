@@ -7,5 +7,15 @@
 </head>
 <body>
   <h1>Index</h1>
+  <%= animals.forEach(element => { %>
+    <div>
+      <h3><%= animal.species %></h3>
+      <p>Habitat: <%= animal.habitat %></p>
+      <p>Huggable? <%= animal.huggable ? 'huggable' : 'hugging not advised' %></p>
+    </div>
+    <%=}); %>
+  <a href="/animals/<%= animal._id %>"><%= animal.species %></a>
+  <a href="/animals/<%= animal._id %>"><%= animal.habitat %></a>
+  <a href="/animals/<%= animal._id %>"><%= animal.huggable ? 'huggable' : 'hugging not advised' %></a>
 </body>
 </html>

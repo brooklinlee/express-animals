@@ -2,8 +2,10 @@ import { Animal } from '../models/animal.js'
 
 function index(req, res) {
   Animal.find({})
-  .then(animal => {
-    res.render('animals/index')
+  .then(animals => {
+    res.render('skills/index', {
+      animals: animals
+    })
   })
   .catch(error => {
     console.log(error)
@@ -11,14 +13,7 @@ function index(req, res) {
   })
 }
 
-// function newAnimals(req, res) {
-//   Animal.find({})
-//   .then (animal => {
-//     res.render('animals/index')
-//   })
-// }
 
 export {
   index,
-  // newAnimals as new,
 }
