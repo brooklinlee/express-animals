@@ -15,9 +15,10 @@
       method="POST">
       <button type="submit">❌</button>
     </form>
-    <a href="/animals/<%= animal._id %>">Species</a>: <%= animal.species %> 
-    | <a href="/animals/<%= animal._id %>">Habitat</a>: <%= animal.habitat %> 
-    | <a href="/animals/<%= animal._id %>">Cool Because... </a><%= animal.why %> 
+    Species: <%= animal.species %> 
+    | Habitat: <%= animal.habitat %> 
+    | Cool Because... <%= animal.why %> 
+    | <a href="/animals/<%= animal._id %>">Edit Animal</a> 
     </li>
   <% }) %>
   </ul>
